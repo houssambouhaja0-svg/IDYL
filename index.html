@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDYL | L'Or Liquide Réinventé</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="noise"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav"
+        class="fixed top-0 w-full z-[100] flex justify-between items-center px-10 py-8 transition-all duration-500 text-white">
+        <div class="flex gap-8">
+            <a href="#home" class="nav-link">La Maison</a>
+            <a href="#collection" class="nav-link">Collections</a>
+        </div>
+        <a href="#home" class="text-3xl tracking-[10px] serif font-bold uppercase cursor-pointer">IDYL</a>
+        <div class="flex items-center gap-8">
+            <a href="#engagement" class="nav-link hidden md:block">Engagement</a>
+            <a href="#contact" class="nav-link hidden md:block">Contact</a>
+            <a href="#concierge" class="nav-link hidden md:flex items-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 1 1-7.6-11.7 8.38 8.38 0 0 1 3.8.9L21 3l-1.9 5.9a8.38 8.38 0 0 1 .9 3.8z">
+                    </path>
+                </svg>
+                Conciergerie
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="menu-close-btn" onclick="toggleMenu()">
+            <span class="text-[10px] uppercase tracking-[4px] gold-text">Retour</span>
+        </button>
+        <a href="#home" class="serif text-3xl italic" onclick="toggleMenu()">La Maison</a>
+        <a href="#collection" class="serif text-3xl italic" onclick="toggleMenu()">Collections</a>
+        <a href="#engagement" class="serif text-3xl italic" onclick="toggleMenu()">Engagement</a>
+        <a href="#contact" class="serif text-3xl italic" onclick="toggleMenu()">Contact</a>
+        <a href="#concierge" class="serif text-3xl italic" onclick="toggleMenu()">Conciergerie</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-video-container flex items-center justify-center">
+        <!-- Video Background -->
+        <div class="absolute inset-0 bg-neutral-900 overflow-hidden">
+            <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <source src="video2.mp4" type="video/mp4">
+                <!-- Fallback image if video doesn't load -->
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=2000"
+                    alt="Background" class="w-full h-full object-cover">
+            </video>
+        </div>
+        <div class="overlay"></div>
+
+        <div class="relative z-10 text-center px-4">
+            <p class="uppercase tracking-[6px] text-xs mb-6 fade-in font-light">Heritage of the Souss Valley</p>
+            <h1 class="serif text-5xl md:text-8xl mb-8 fade-in italic" style="transition-delay: 0.2s;">
+                Min aslet l’bled, l’werth dial jdade
+            </h1>
+            <div class="flex flex-col items-center">
+                <p class="serif text-xl md:text-2xl font-light mb-12 max-w-2xl fade-in text-neutral-300"
+                    style="transition-delay: 0.4s;">
+                    IDYL, Reinventing Liquid Gold.
+                </p>
+                <div class="fade-in" style="transition-delay: 0.6s;">
+                    <a href="#collection" class="btn-luxury">Explorer la collection</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+            <div class="w-[1px] h-16 bg-neutral-700 relative overflow-hidden">
+                <div
+                    class="absolute top-0 left-0 w-full h-full bg-gold translate-y-[-100%] animate-[scrollLine_3s_infinite]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Heritage Section -->
+    <section class="py-32 px-10 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-20 items-center bg-[#050505]">
+        <div class="relative h-[500px] flex items-center justify-center fade-in" id="tilt-container"
+            style="perspective: 1000px;">
+            <div id="tilt-element" class="relative transition-transform duration-75 ease-out"
+                style="transform-style: preserve-3d;">
+                <img src="image.07-removebg-preview.png" alt="L'Arbre de Vie"
+                    class="w-full max-w-2xl object-contain drop-shadow-[0_20px_50px_rgba(197,160,89,0.15)]">
+            </div>
+        </div>
+        <div class="fade-in">
+            <p class="uppercase tracking-[6px] text-xs mb-6 font-light text-neutral-500">[Section 1 : L'Héritage]</p>
+            <h2 class="serif text-4xl mb-8 leading-tight">L’Arbre de Vie,<br><span class="italic gold-text">La Source de
+                    Lumière</span></h2>
+
+            <div class="space-y-8">
+                <div>
+                    <h3 class="serif text-2xl gold-text italic mb-3">Le Geste Ancestral</h3>
+                    <p class="text-neutral-400 leading-relaxed font-light text-lg">
+                        Au pied de l'Atlas, l'arganier ne donne pas seulement un fruit, il offre un destin.
+                        Chaque noix est sélectionnée avec la même rigueur que les pierres précieuses.
+                    </p>
+                </div>
+
+                <div class="pl-4 border-l border-neutral-800">
+                    <h4 class="text-white uppercase tracking-widest text-xs mb-2 font-bold">L'Extraction Lente</h4>
+                    <p class="text-neutral-500 leading-relaxed font-light">
+                        Nos artisanes pressent les noyaux à la main, un geste millénaire qui protège 100% des actifs.
+                    </p>
+                </div>
+
+                <div class="pl-4 border-l border-neutral-800">
+                    <h4 class="text-white uppercase tracking-widest text-xs mb-2 font-bold">L'Or Vivant</h4>
+                    <p class="text-neutral-500 leading-relaxed font-light">
+                        Ce procédé "Handmade" garantit une intégrité moléculaire que nulle machine ne peut reproduire.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-32 bg-[#0d0d0d] px-10">
+        <div class="text-center mb-24">
+            <h2 class="serif text-5xl mb-4 italic">The Essentials</h2>
+            <p class="text-neutral-500 uppercase tracking-widest text-[10px]">Three icons of purity</p>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <!-- Product 1 -->
+            <div class="product-card fade-in" draggable="true" data-id="product-1">
+                <div class="bg-neutral-900 aspect-[3/4] mb-8 overflow-hidden group cursor-pointer relative">
+                    <img src="image.05.jpeg" class="w-full h-full object-cover opacity-80 pointer-events-none"
+                        alt="Argan Eye Patches">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <button onclick="openModal('Argan Eye Patches', 490)"
+                            class="btn-luxury bg-white text-black">Commander</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="serif text-2xl">Argan Eye Patches</h3>
+                    <span class="text-white font-light">490 DH</span>
+                </div>
+                <p class="gold-text text-xs uppercase tracking-[3px] mb-4">World Exclusive Innovation</p>
+                <div class="space-y-4">
+                    <p class="text-neutral-500 text-[11px] font-light leading-relaxed">
+                        <strong>Innovation:</strong> Une innovation technologique mondiale utilisant la bio-cellulose
+                        pour infuser un sérum d'argan pur directement dans la zone délicate du regard.
+                    </p>
+                    <p class="text-neutral-400 text-[11px] italic font-light leading-relaxed">
+                        <strong>Promesse:</strong> Une régénération cellulaire immédiate pour un regard reposé et
+                        éclatant
+                        de lumière.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card fade-in" draggable="true" data-id="product-2" style="transition-delay: 0.2s;">
+                <div class="bg-neutral-900 aspect-[3/4] mb-8 overflow-hidden group cursor-pointer relative">
+                    <img src="image.03.jpeg" class="w-full h-full object-cover opacity-80 pointer-events-none"
+                        alt="Silk Face Mask">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <button onclick="openModal('The Silk Face Mask', 320)"
+                            class="btn-luxury bg-white text-black">Commander</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="serif text-2xl">The Silk Face Mask</h3>
+                    <span class="text-white font-light">320 DH</span>
+                </div>
+                <p class="gold-text text-xs uppercase tracking-[3px] mb-4">Sensorial Purity</p>
+                <div class="space-y-4">
+                    <p class="text-neutral-500 text-[11px] font-light leading-relaxed">
+                        <strong>Innovation:</strong> Un masque cocon ultra-nourrissant qui fusionne la pureté de
+                        l'extrait d'argan avec les essences botaniques les plus précieuses de l'Atlas.
+                    </p>
+                    <p class="text-neutral-400 text-[11px] italic font-light leading-relaxed">
+                        <strong>Promesse:</strong> Une expérience sensorielle unique pour une peau repulpée, douce comme
+                        de la soie.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card fade-in" draggable="true" data-id="product-3" style="transition-delay: 0.4s;">
+                <div class="bg-neutral-900 aspect-[3/4] mb-8 overflow-hidden group cursor-pointer relative">
+                    <img src="image11.png" class="w-full h-full object-cover opacity-80 pointer-events-none"
+                        alt="Le Savon de Face Artisanal">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <button onclick="openModal('Le Savon de Face Artisanal', 180)"
+                            class="btn-luxury bg-white text-black">Commander</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="serif text-2xl">Le Savon de Face Artisanal</h3>
+                    <span class="text-white font-light">180 DH</span>
+                </div>
+                <p class="gold-text text-xs uppercase tracking-[3px] mb-4">Ancestral Craft</p>
+                <div class="space-y-4">
+                    <p class="text-neutral-500 text-[11px] font-light leading-relaxed">
+                        <strong>Innovation:</strong> Un soin lavant saponifié à froid pendant 6 semaines, respectant le
+                        cycle de maturation naturel pour préserver les actifs.
+                    </p>
+                    <p class="text-neutral-400 text-[11px] italic font-light leading-relaxed">
+                        <strong>Promesse:</strong> Un nettoyage profond qui ne décapage pas la peau, laissant un film
+                        lipidique protecteur et une sensation de confort absolu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card fade-in" draggable="true" data-id="product-4" style="transition-delay: 0.6s;">
+                <div class="bg-neutral-900 aspect-[3/4] mb-8 overflow-hidden group cursor-pointer relative">
+                    <img src="image88.png" class="w-full h-full object-cover opacity-80 pointer-events-none"
+                        alt="Huile d'Argan">
+                    <div
+                        class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <button onclick="openModal('Huile d\'Argan', 60)"
+                            class="btn-luxury bg-white text-black">Commander</button>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="serif text-2xl">Huile d'Argan</h3>
+                    <span class="text-white font-light">60 DH</span>
+                </div>
+                <p class="gold-text text-xs uppercase tracking-[3px] mb-4">Liquid Gold</p>
+                <div class="space-y-4">
+                    <p class="text-neutral-500 text-[11px] font-light leading-relaxed">
+                        <strong>Description:</strong> L'essence même d'IDYL. Une huile organique pure, pressée à la main
+                        et extraite à froid pour garantir une concentration maximale en Vitamine E.
+                    </p>
+                    <p class="text-neutral-400 text-[11px] italic font-light leading-relaxed">
+                        <strong>Promesse:</strong> Une nutrition intense et une protection antioxydante pour révéler la
+                        lumière naturelle du teint.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-32 bg-black overflow-hidden border-t border-neutral-900">
+        <div class="max-w-6xl mx-auto px-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="fade-in">
+                    <div class="gold-text text-xs mb-6 uppercase tracking-[4px] font-bold">LE TÉMOIGNAGE</div>
+                    <p class="serif text-xl italic text-white leading-relaxed mb-8">
+                        "Une texture divine qui fusionne instantanément avec la peau. Mon rituel du soir est devenu un
+                        moment de pure sérénité."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-[1px] bg-neutral-700"></div>
+                        <span class="text-[10px] uppercase tracking-[4px] text-neutral-500">Sophie L., Paris</span>
+                    </div>
+                </div>
+                <div class="fade-in" style="transition-delay: 0.2s;">
+                    <div class="gold-text text-xs mb-6 uppercase tracking-[4px] font-bold">L'EXPÉRIENCE</div>
+                    <p class="serif text-xl italic text-white leading-relaxed mb-8">
+                        "L'Huile d'Argan IDYL est incomparable. On sent la pureté du geste artisanal dès la première
+                        application. Spectaculaire."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-[1px] bg-neutral-700"></div>
+                        <span class="text-[10px] uppercase tracking-[4px] text-neutral-500">Marc V., Marrakech</span>
+                    </div>
+                </div>
+                <div class="fade-in" style="transition-delay: 0.4s;">
+                    <div class="gold-text text-xs mb-6 uppercase tracking-[4px] font-bold">L'EXCEPTION</div>
+                    <p class="serif text-xl italic text-white leading-relaxed mb-8">
+                        "Enfin une marque qui respecte l'âme de l'Argan tout en proposant une esthétique d'un luxe
+                        absolu. Un chef-d'œuvre."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-8 h-[1px] bg-neutral-700"></div>
+                        <span class="text-[10px] uppercase tracking-[4px] text-neutral-500">Elena R., London</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section id="engagement" class="pb-32 px-10 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+            <div class="fade-in">
+                <div class="serif text-3xl mb-4">Technical Innovation</div>
+                <p class="text-neutral-500 text-[10px] font-light leading-loose uppercase tracking-[4px]">BRIDGING THE
+                    GAP
+                    BETWEEN BIOTECHNOLOGY AND NATURE.</p>
+            </div>
+            <div class="fade-in" style="transition-delay: 0.2s;">
+                <div class="serif text-3xl mb-4">Social Impact</div>
+                <p class="text-neutral-500 text-[10px] font-light leading-loose uppercase tracking-[4px]">EMPOWERING THE
+                    WOMEN COOPERATIVES OF THE SOUSS REGION.</p>
+            </div>
+            <div class="fade-in" style="transition-delay: 0.4s;">
+                <div class="serif text-3xl mb-4">Sensorial Purity</div>
+                <p class="text-neutral-500 text-[10px] font-light leading-loose uppercase tracking-[4px]">
+                    FRAGRANCE-FREE,
+                    RAW MATERIALS, ABSOLUTE SILENCE FOR THE SKIN.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rituals Section -->
+    <section class="py-32 bg-[#050505] px-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-24 fade-in">
+                <p class="uppercase tracking-[6px] text-[10px] mb-4 text-neutral-500">L'Art du Soin</p>
+                <h2 class="serif text-5xl italic gold-text">Les Rituels IDYL</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Step 1 -->
+                <div class="fade-in group">
+                    <div class="relative mb-10 overflow-hidden aspect-[3/4]">
+                        <img src="image11.png"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                            alt="Purifier">
+                        <div class="absolute top-6 left-6 text-5xl serif italic gold-text opacity-50">01</div>
+                    </div>
+                    <h3 class="serif text-2xl mb-4">Purifier</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed mb-4">
+                        Préparez votre peau avec <strong>Le Savon de Face Artisanal</strong>. Une mousse onctueuse qui
+                        libère délicatement les impuretés tout en respectant l'équilibre lipidique naturel de votre
+                        visage.
+                    </p>
+                    <p class="text-neutral-400 text-sm italic font-light">
+                        <strong>L'Effet :</strong> Une peau saine, fraîche et parfaitement préparée à recevoir les soins
+                        suivants.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="fade-in group" style="transition-delay: 0.2s;">
+                    <div class="relative mb-10 overflow-hidden aspect-[3/4]">
+                        <img src="image.03.jpeg"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                            alt="Apaiser">
+                        <div class="absolute top-6 left-6 text-5xl serif italic gold-text opacity-50">02</div>
+                    </div>
+                    <h3 class="serif text-2xl mb-4">Apaiser</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed mb-4">
+                        Appliquez <strong>The Silk Face Mask</strong>. Laissez la technologie de la bio-cellulose
+                        infuser intensément les actifs d'argan au plus profond de vos cellules.
+                    </p>
+                    <p class="text-neutral-400 text-sm italic font-light">
+                        <strong>L'Effet :</strong> Une renaissance immédiate pour les peaux fatiguées, laissant le teint
+                        apaisé et intensément ressourcé.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="fade-in group" style="transition-delay: 0.4s;">
+                    <div class="relative mb-10 overflow-hidden aspect-[3/4]">
+                        <img src="image88.png"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+                            alt="Sublimer">
+                        <div class="absolute top-6 left-6 text-5xl serif italic gold-text opacity-50">03</div>
+                    </div>
+                    <h3 class="serif text-2xl mb-4">Sublimer</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed mb-4">
+                        Scellez l'hydratation avec quelques gouttes de notre <strong>Huile d'Argan</strong> pure. Une
+                        caresse finale qui apporte une nutrition absolue et une protection antioxydante durable.
+                    </p>
+                    <p class="text-neutral-400 text-sm italic font-light">
+                        <strong>L'Effet :</strong> Un éclat éternel et une peau visiblement sublimée, rayonnante de la
+                        lumière originelle du Souss.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Journey / Concierge -->
+    <section id="concierge" class="py-32 bg-[#050505] text-white relative overflow-hidden">
+        <!-- Particle Canvas -->
+        <canvas id="particle-canvas" class="absolute inset-0 pointer-events-none"></canvas>
+
+        <div class="max-w-7xl mx-auto px-10 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <!-- Image side with float animation -->
+                <div class="fade-in flex justify-center lg:justify-start lg:-ml-12 order-2 lg:order-1">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-10 bg-gold/10 blur-3xl rounded-full scale-0 group-hover:scale-100 transition-transform duration-1000">
+                        </div>
+                        <img src="image.08.png" alt="Concierge" class="w-full max-w-md float-animation opacity-90">
+                    </div>
+                </div>
+
+                <!-- Text side -->
+                <div class="fade-in order-1 lg:order-2">
+                    <p class="uppercase tracking-[6px] text-[10px] mb-6 gold-text font-bold">CONCIERGERIE DIGITALE</p>
+                    <h2 class="serif text-4xl md:text-6xl mb-12 italic leading-tight text-neutral-300">Une Conversation
+                        <br>Particulière
+                    </h2>
+
+                    <div class="space-y-12">
+                        <div class="border-l-2 border-white/20 pl-8">
+                            <h4 class="serif text-2xl mb-4 italic">1. Éducation & Transparence</h4>
+                            <p class="text-neutral-400 font-light leading-relaxed">
+                                Chaque étape de notre production est documentée. Plongez dans notre storytelling
+                                Instagram ou explorez nos guides techniques pour comprendre l'alchimie de l'Argan.
+                            </p>
+                        </div>
+                        <div class="border-l-2 border-white/20 pl-8">
+                            <h4 class="serif text-2xl mb-4 italic">2. Consultation Directe</h4>
+                            <p class="text-neutral-400 font-light leading-relaxed mb-8">
+                                Besoin d'un diagnostic personnalisé ? Nos experts vous répondent via notre service de
+                                Conciergerie WhatsApp.
+                            </p>
+                            <a href="https://wa.me/212605764183"
+                                class="btn-luxury border-white text-white hover:bg-white hover:text-black transition-all">Lancer
+                                la discussion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-10 text-center border-t border-neutral-800 text-neutral-600">
+        <div class="serif text-2xl mb-8 gold-text">IDYL</div>
+        <div class="flex justify-center flex-wrap gap-8 mb-12 text-[10px] uppercase tracking-[3px]">
+            <a href="https://instagram.com/id_yl_maroc" target="_blank"
+                class="hover:text-white transition-colors">Instagram</a>
+            <a href="https://wa.me/212605764173" target="_blank" class="hover:text-white transition-colors">WhatsApp</a>
+            <a href="mailto:bouhajahoussam234@gmail.com" class="hover:text-white transition-colors">Contact</a>
+            <span>06 05 76 41 73</span>
+        </div>
+        <div class="flex flex-col gap-4">
+            <p class="text-[9px] uppercase tracking-[4px] opacity-40">Made in Morocco</p>
+            <p class="text-[9px] uppercase tracking-[4px] opacity-40">© 2024 Maison IDYL — Artisanat de Luxe du Souss
+            </p>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeModal()"></div>
+        <div
+            class="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-[40%] w-full max-w-lg bg-[#050505] border border-gold p-6 shadow-[0_0_50px_rgba(197,160,89,0.15)] fade-in visible rounded-sm max-h-[95vh] overflow-y-auto">
+            <div class="relative flex justify-center items-center mb-6">
+                <h3 class="serif text-2xl gold-text italic tracking-wide">Votre Commande</h3>
+                <button onclick="closeModal()"
+                    class="absolute right-0 text-neutral-400 hover:text-white text-xl">&times;</button>
+            </div>
+
+            <form id="orderForm" onsubmit="submitOrder(event)" class="flex flex-col gap-4">
+                <input type="hidden" id="productName">
+
+                <div class="flex flex-col gap-1 text-center border-b border-neutral-800 pb-4 mb-2">
+                    <label class="text-[10px] uppercase tracking-[2px] text-neutral-500">Produit Sélectionné</label>
+                    <div id="displayProductName" class="text-lg serif text-white"></div>
+                    <div id="displayProductPrice" class="text-base gold-text font-medium"></div>
+                </div>
+
+                <div class="space-y-3">
+                    <input type="text" id="fullName" placeholder="Nom Complet" required
+                        class="w-full bg-neutral-900/30 border-b border-neutral-700 py-3 px-4 text-sm text-white focus:border-gold focus:bg-neutral-900/50 outline-none transition-all placeholder:text-neutral-500 rounded-t-sm">
+
+                    <input type="tel" id="phone" placeholder="Numéro de Téléphone" required
+                        class="w-full bg-neutral-900/30 border-b border-neutral-700 py-3 px-4 text-sm text-white focus:border-gold focus:bg-neutral-900/50 outline-none transition-all placeholder:text-neutral-500 rounded-t-sm">
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" id="city" placeholder="Ville" required
+                            class="w-full bg-neutral-900/30 border-b border-neutral-700 py-3 px-4 text-sm text-white focus:border-gold focus:bg-neutral-900/50 outline-none transition-all placeholder:text-neutral-500 rounded-t-sm">
+                        <input type="number" id="quantity" value="1" min="1" required
+                            class="w-full bg-neutral-900/30 border-b border-neutral-700 py-3 px-4 text-sm text-white focus:border-gold focus:bg-neutral-900/50 outline-none transition-all placeholder:text-neutral-500 rounded-t-sm">
+                    </div>
+
+                    <input type="text" id="address" placeholder="Adresse de Livraison" required
+                        class="w-full bg-neutral-900/30 border-b border-neutral-700 py-3 px-4 text-sm text-white focus:border-gold focus:bg-neutral-900/50 outline-none transition-all placeholder:text-neutral-500 rounded-t-sm">
+                </div>
+
+                <button type="submit"
+                    class="btn-luxury w-full mt-4 bg-gold text-black border-gold hover:bg-white hover:text-black font-bold tracking-[4px] text-xs py-4 shadow-[0_0_20px_rgba(197,160,89,0.3)] hover:shadow-[0_0_30px_rgba(197,160,89,0.5)] transform hover:-translate-y-1 transition-all duration-300">
+                    CONFIRMER SUR WHATSAPP
+                </button>
+                <p class="text-center text-[9px] text-neutral-500 uppercase tracking-widest mt-1">Paiement à la
+                    livraison</p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Also trigger line-draw if it's inside
+                    const line = entry.target.querySelector('.line-draw');
+                    if (line) line.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax and Header Glassmorphism
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const nav = document.getElementById('main-nav');
+            const heroText = document.querySelector('.hero-video-container .relative');
+
+            // Glassmorphism toggle
+            if (scrolled > 50) {
+                nav.classList.add('scrolled');
+                nav.classList.remove('mix-blend-difference');
+            } else {
+                nav.classList.remove('scrolled');
+                nav.classList.add('mix-blend-difference');
+            }
+
+            if (heroText) {
+                heroText.style.transform = `translateY(${scrolled * 0.3}px)`;
+                heroText.style.opacity = 1 - (scrolled / 800);
+            }
+        });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        // Modal Logic
+        function openModal(productName, price) {
+            const modal = document.getElementById('orderModal');
+            document.getElementById('productName').value = productName;
+            document.getElementById('displayProductName').innerText = productName;
+            document.getElementById('displayProductPrice').innerText = price + " DH";
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('orderModal');
+            modal.classList.add('hidden');
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+
+            const productName = document.getElementById('productName').value;
+            const fullName = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const address = document.getElementById('address').value;
+            const quantity = document.getElementById('quantity').value;
+
+            // Format WhatsApp Message
+            const message = `Bonjour, je souhaite commander :%0A` +
+                `Produit: ${productName}%0A` +
+                `Quantité: ${quantity}%0A` +
+                `Prix Total: ${document.getElementById('displayProductPrice').innerText.replace(' DH', '') * quantity} DH%0A%0A` +
+                `Mes informations :%0A` +
+                `Nom: ${fullName}%0A` +
+                `Téléphone: ${phone}%0A` +
+                `Ville: ${city}%0A` +
+                `Adresse: ${address}`;
+
+            const whatsappUrl = `https://wa.me/212605764183?text=${message}`;
+
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+        }
+
+        // Drag and Drop Logic with Local Storage Persistence
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('product-grid');
+            let draggables = document.querySelectorAll('.product-card');
+
+            // Load saved order
+            const savedOrder = JSON.parse(localStorage.getItem('idylProductOrder'));
+            if (savedOrder) {
+                const currentCards = Array.from(draggables);
+                // Clear grid
+                grid.innerHTML = '';
+                // Append in saved order
+                savedOrder.forEach(id => {
+                    const card = currentCards.find(c => c.dataset.id === id);
+                    if (card) grid.appendChild(card);
+                });
+                // Append any new products not in saved order
+                currentCards.filter(c => !savedOrder.includes(c.dataset.id)).forEach(c => grid.appendChild(c));
+                // Re-select draggables after reordering
+                draggables = document.querySelectorAll('.product-card');
+            }
+
+            draggables.forEach(draggable => {
+                draggable.addEventListener('dragstart', () => {
+                    draggable.classList.add('dragging');
+                    draggable.style.opacity = '0.5';
+                });
+
+                draggable.addEventListener('dragend', () => {
+                    draggable.classList.remove('dragging');
+                    draggable.style.opacity = '1';
+                    saveOrder();
+                });
+            });
+
+            grid.addEventListener('dragover', e => {
+                e.preventDefault();
+                const afterElement = getDragAfterElement(grid, e.clientY, e.clientX);
+                const draggable = document.querySelector('.dragging');
+                if (afterElement == null) {
+                    grid.appendChild(draggable);
+                } else {
+                    grid.insertBefore(draggable, afterElement);
+                }
+            });
+
+            function getDragAfterElement(container, y, x) {
+                const draggableElements = [...container.querySelectorAll('.product-card:not(.dragging)')];
+
+                return draggableElements.reduce((closest, child) => {
+                    const box = child.getBoundingClientRect();
+                    const offsetX = x - (box.left + box.width / 2);
+                    const offsetY = y - (box.top + box.height / 2);
+                    const dist = Math.hypot(offsetX, offsetY);
+
+                    if (closest === null || dist < closest.dist) {
+                        return { offset: dist, element: child, dist: dist };
+                    } else {
+                        return closest;
+                    }
+                }, null).element;
+            }
+
+            function saveOrder() {
+                const currentOrder = [...document.querySelectorAll('.product-card')].map(c => c.dataset.id);
+                localStorage.setItem('idylProductOrder', JSON.stringify(currentOrder));
+            }
+        });
+
+        // 3D Tilt Effect for Heritage Section
+        const tiltContainer = document.getElementById('tilt-container');
+        const tiltElement = document.getElementById('tilt-element');
+
+        if (tiltContainer && tiltElement) {
+            tiltContainer.addEventListener('mousemove', (e) => {
+                const rect = tiltContainer.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Calculate percentage from center
+                const xPct = (x / rect.width) - 0.5;
+                const yPct = (y / rect.height) - 0.5;
+
+                // Max rotation degrees
+                const rotation = 20;
+
+                // RotateY is based on X movement, RotateX is based on Y movement (inverted)
+                tiltElement.style.transform = `rotateY(${xPct * rotation}deg) rotateX(${yPct * -rotation}deg) scale(1.05)`;
+            });
+
+            tiltContainer.addEventListener('mouseleave', () => {
+                tiltElement.style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`;
+            });
+        }
+
+        // Particle System for Concierge Section
+        const canvas = document.getElementById('particle-canvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resize() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.init();
+                }
+                init() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = Math.random() * 0.5 - 0.25;
+                    this.speedY = Math.random() * 0.5 - 0.25;
+                    this.opacity = Math.random() * 0.5 + 0.2;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > canvas.width) this.init();
+                    if (this.y < 0 || this.y > canvas.height) this.init();
+                }
+                draw() {
+                    ctx.fillStyle = `rgba(197, 160, 89, ${this.opacity})`;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    </script>
+
+    <style>
+        @keyframes scrollLine {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            50% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+    </style>
+</body>
+
+</html>
